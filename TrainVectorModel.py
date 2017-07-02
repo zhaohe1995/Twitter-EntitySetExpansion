@@ -50,9 +50,9 @@ if __name__ == '__main__':
     target_file.close()
 
     sentences = LineSentence(target_path)
-    model = Word2Vec.load(model_path)
-    model.train(sentences)
-    #model = Word2Vec(sentences, size=200, window=5, min_count=5,workers=multiprocessing.cpu_count())
+    #model = Word2Vec.load(model_path)
+    #model.train(sentences)
+    model = Word2Vec(sentences, size=200, window=5, min_count=5,workers=multiprocessing.cpu_count())
     # trim unneeded model memory = use(much) less RAM
     #model.init_sims(replace=True)
     model.save(model_path)   
